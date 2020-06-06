@@ -2,7 +2,7 @@
 
     <div class="card">
         <div class="card-header">
-            <a href="/profile" class="btn btn-default"><span class="glyphicon glyphicon-arrow-left">Back </span></a>
+            <a href="" class="btn btn-default"><span class="glyphicon glyphicon-arrow-left">Back </span></a>
             <li class="media my-4">
                 <img class="mr-3" width="120px" height="120px" src="{{username.avatar_url}}"  >
                 <div class="media-body">
@@ -37,7 +37,7 @@
             <div>
                 <h4>Pinned Repository</h4>
                 <div *ngFor= " let repo of repos">
-                    <div class="card card-body">
+                    <div class="card card-body my-1">
                         <li class="media">
                             <img class="mr-3" src="{{repo.owner.avatar_url}}"  class="rounded-circle" width="50px" height="50px" >
                             <div class="media-body ml-2">
