@@ -1,6 +1,6 @@
 <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-      <form class="well">
+    <div class="col-12">
+      <form>
         <div class="form-group">
           <input [(ngModel)]="name" name="name" (keyup)="searchUser()" class="form-control" placeholder="Enter Github username..." />
         </div>
@@ -8,21 +8,21 @@
     </div>
 </div>
 <div class="row">
-
-    <div class="col-12 col-sm-6 col-md-4" *ngFor="let user of users" (click)="onProfileSelect(user)">
+    <div class="col-12 col-sm-6 col-md-4" *ngFor="let user of users" >
+      <div [routerLink]="['/profileDetail', user['login']]"> 
         <div class="card my-2">
-            <div class="card-body">
-                <li class="media my-4">
-                    <img class="mr-3" width="50px" height="50px"  src='{{user.avatar_url}}'>
-                    <div class="media-body">
-                    <p>{{user.name}}</p>
-                    <p>@{{user.login}}<span>work at {{user.company}}</span></p>
-                    <p class="bio" *ngIf="user.bio">{{user.bio}}</p>
-                    </div>
-                </li>
-            </div>
-    
+          <div class="card-body">
+              <li class="media my-4">
+                  <img class="mr-3" width="50px" height="50px"  src='{{user.avatar_url}}'>
+                  <div class="media-body">
+                  <p>{{user.name}}</p>
+                  <p>@{{user.login}}<span>work at {{user.company}}</span></p>
+                  <p class="bio" *ngIf="user.bio">{{user.bio}}</p>
+                  </div>
+              </li>
+          </div>
         </div>
+      </div>
     </div>
 </div>
   

@@ -4,46 +4,45 @@
         <div class="card-header">
             <a href="/profile" class="btn btn-default"><span class="glyphicon glyphicon-arrow-left">Back </span></a>
             <li class="media my-4">
-                <img class="mr-3" width="120px" height="120px" >
+                <img class="mr-3" width="120px" height="120px" src="{{username.avatar_url}}"  >
                 <div class="media-body">
-                <p></p>
-                <p>@}<span>work at </span></p>
-                <p class="bio" ></p>
+                <p>{{username.name}}</p>
+                <p>@{{username.login}}</p>
                 </div>
             </li>
         </div>
         <div class="card-body">
             <div>
                 <h4>Bio</h4>
-                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free fr</p>
+                <p>{{username.bio}}</p>
             </div>
             <div>
                 <h4>Work at</h4>
-                <p>Lroen Ipsum</p>
+                <p>{{username.company}}</p>
             </div>
             <div class="row">
                 <div class="col-6">
                     <div>
                         <h4>Repository</h4>
-                        <p>22</p>
+                        <p>{{username.public_repos}}</p>
                     </div>  
                 </div>
                 <div class="col-6">
                     <div>
                         <h4>Followers</h4>
-                        <p>5</p>
+                        <p>{{username.followers}}</p>
                     </div>
                 </div>
             </div>
             <div>
                 <h4>Pinned Repository</h4>
-                <div>
+                <div *ngFor= " let repo of repos">
                     <div class="card card-body">
                         <li class="media">
-                            <img class="mr-3" class="rounded-circle" width="50px" height="50px" >
+                            <img class="mr-3" src="{{repo.owner.avatar_url}}"  class="rounded-circle" width="50px" height="50px" >
                             <div class="media-body ml-2">
-                            <p>darajanraj/conFusionServer</p>
-                            <p>This is server for restaurant website and it serves fot dishes data and comment and their </p>
+                            <p>{{repo.full_name}}</p>
+                            <p>{{repo.description}}</p>
                             </div>
                         </li>   
                     </div>

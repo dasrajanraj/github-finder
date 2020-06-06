@@ -6,7 +6,7 @@ import { ProfileDetailComponent } from './component/profile-detail/profile-detai
 
 const routes: Routes = [
   {path :'' , component : ProfileComponent},
-  {path :'profileDetail', component : ProfileDetailComponent}
+  {path :'profileDetail/:user', component : ProfileDetailComponent}
 ];
 
 @NgModule({
