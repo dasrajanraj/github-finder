@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
-import { Observable } from 'rxjs';
 import { pipe } from 'rxjs';
 import {map} from 'rxjs/operators';
 
@@ -24,12 +23,12 @@ export class GithubServiceService {
     return this.http.get('http://api.github.com/search/users?q='+this.name+'&client_id='+this.client_id+'&client_secret='+this.client_secret)
     .pipe(map((res:any) => res.json()));
   }
-  getUser(){
-    return this.http.get('http://api.github.com/users/'+this.username)
-    .pipe(map((res:any) => res.json()));
+  getUser(user : string){
+    return this.http.get('http://api.github.com/users/'+user+'?client_id='+this.client_id+'&client_secret='+this.client_secret)
+    .pipe(map((res) => res.json()));
   }
   getRepos(){
-    return this.http.get('http://api.github.com/users/'+this.username+'/repos')
+    return this.http.get('http://api.github.com/users/'+this.username+'/repos?client_id='+this.client_id+'&client_secret='+this.client_secret)
     .pipe(map(res => res.json()));
   }
 

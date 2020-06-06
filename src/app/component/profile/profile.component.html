@@ -9,7 +9,7 @@
 </div>
 <div class="row">
 
-    <div class="col-12 col-sm-6 col-md-4" *ngFor="let user of users">
+    <div class="col-12 col-sm-6 col-md-4" *ngFor="let user of users" (click)="onProfileSelect(user)">
         <div class="card my-2">
             <div class="card-body">
                 <li class="media my-4">

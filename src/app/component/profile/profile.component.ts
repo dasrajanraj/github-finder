@@ -33,5 +33,9 @@ export class ProfileComponent implements OnInit {
     },1500)
     
   }
+  onProfileSelect(user){
+    console.log("A user clicked ")
+    console.log(user);
+  }
 
 }
