@@ -18,13 +18,20 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
   }
   searchUser(){
-    console.log(this.name);
-    this.gitService.updateName(this.name);
-
-    this.gitService.getUsers().subscribe(res =>{
-      this.users = res;
-      console.log(this.users);
-    })
+    setTimeout(()=>{
+        console.log(this.name);
+        this.gitService.updateName(this.name);
+        
+        this.gitService.getUsers().subscribe(res =>{
+          this.users = res.items;
+          this.users = this.users.map((user,i) =>{ 
+            this.gitService.getUser(user.login).subscribe(res=> this.users[i] = res );
+          })
+          console.log(this.users);
+        })
+        
+    },1500)
+    
   }
 
 }

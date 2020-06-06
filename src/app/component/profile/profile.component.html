@@ -7,4 +7,22 @@
       </form>
     </div>
 </div>
+<div class="row">
+
+    <div class="col-12 col-sm-6 col-md-4" *ngFor="let user of users">
+        <div class="card my-2">
+            <div class="card-body">
+                <li class="media my-4">
+                    <img class="mr-3" width="50px" height="50px"  src='{{user.avatar_url}}'>
+                    <div class="media-body">
+                    <p>{{user.name}}</p>
+                    <p>@{{user.login}}<span>work at {{user.company}}</span></p>
+                    <p class="bio" *ngIf="user.bio">{{user.bio}}</p>
+                    </div>
+                </li>
+            </div>
+    
+        </div>
+    </div>
+</div>
   
